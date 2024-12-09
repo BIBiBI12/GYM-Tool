@@ -1,0 +1,68 @@
+<!--
+ * @Author: zqx me_zqx@163.com
+ * @Date: 2024-12-09 10:33:40
+ * @LastEditors: zqx me_zqx@163.com
+ * @LastEditTime: 2024-12-09 10:41:04
+ * @FilePath: /健身记录本/index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泉屋兄弟专用</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>泉屋兄弟专用</h1>
+        
+        <form id="workout-form">
+            <div class="form-group">
+                <label for="exercise-name">动作名称：</label>
+                <div class="exercise-input-group">
+                    <input type="text" id="exercise-name" required>
+                    <button type="button" id="show-exercises" class="secondary-btn">选择动作</button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="sets">组数：</label>
+                <input type="number" id="sets" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="weight">重量(kg)：</label>
+                <input type="number" id="weight" min="0" step="0.5" required>
+            </div>
+            
+            <button type="submit">添加记录</button>
+        </form>
+
+        <div class="records">
+            <h2>记录列表</h2>
+            <div id="records-list"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <div id="exercise-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>选择动作</h3>
+                <button type="button" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="exercise-categories">
+                    <button type="button" class="category-btn active" data-category="chest">胸部</button>
+                    <button type="button" class="category-btn" data-category="back">背部</button>
+                    <button type="button" class="category-btn" data-category="legs">腿部</button>
+                    <button type="button" class="category-btn" data-category="shoulders">肩部</button>
+                    <button type="button" class="category-btn" data-category="arms">手臂</button>
+                </div>
+                <div class="exercise-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
